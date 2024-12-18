@@ -1,0 +1,25 @@
+{
+  "locale": "it-IT",
+  "translations": {
+    "URL": "URL",
+    "PROJECT_ID": "Project ID",
+    "ACCESS_TOKEN": "Access Token",
+    "SELECT_BRANCHES": " Seleziona i branch ",
+    "NUMBER_MAX_COMMIT": " Numero massimo commit ",
+    "BTN_BACK": " Indietro ",
+    "BTN_SELECT_BRANCH": " Seleziona i branch ",
+    "CHART1_TITLE": "Media righe aggiornate settimanalmente per contributore",
+    "CHART1_X": "Settimane",
+    "CHART1_Y": "Media righe aggiornate",
+    "CHART2_TITLE": "Media tempo tra commit per contributore (in giorni)",
+    "CHART3_TITLE": "Tot commits settimanale per contributore",
+    "CHART3_X": "Settimane",
+    "CHART3_Y": "Tot commits",
+    "CHART4_LABEL": "Tot commits",
+    "CHART4_TITLE": "Tot commits per contributore",
+    "CHART5_TITLE": "Num giorni attivi settimanali per contributore",
+    "CHART5_X": "Settimane",
+    "CHART5_Y": "Giorni attivi",
+    "TITLE": "Aggiungi le informazioni per calcolare le metriche"
+  }
+}

@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+.max-w-500px {
+    max-width: 500px;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}

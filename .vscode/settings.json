@@ -1,0 +1,19 @@
+{
+    "angular.enable-strict-mode-prompt": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "angular-files-generator.generateSpec": 0,
+    "angular-files-generator.generateStories": 0,
+    "i18n-ally.localesPaths": [
+        "src/assets/i18n"
+    ],
+    "i18n-ally.keystyle": "nested",
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+}

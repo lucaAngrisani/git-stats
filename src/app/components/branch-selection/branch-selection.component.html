@@ -1,0 +1,71 @@
+<section class="flex justify-content-center">
+  <p-card class="w-full max-w-500px">
+    <div class="flex flex-column gap-4">
+      <div class="flex gap-2">
+        <div class="flex flex-column gap-2">
+          <label i18n="@@URL" for="url">URL</label>:
+          <label i18n="@@PROJECT_ID" for="projectId">Project ID</label>:
+          <label i18n="@@ACCESS_TOKEN" for="accessToken">Access Token</label>:
+        </div>
+        <div class="flex flex-column gap-2">
+          <div>{{ gitSvc.BASE_URL }}</div>
+          <div>{{ gitSvc.PROJECT_ID }}</div>
+          <div>{{ gitSvc.TOKEN }}</div>
+        </div>
+      </div>
+
+      <form
+        [formGroup]="branchesForm"
+        (ngSubmit)="onSelectBranches()"
+        class="flex flex-column gap-3 align-items-center"
+      >
+        <p-floatlabel variant="on" class="w-full">
+          <p-multiselect
+            id="branches"
+            class="w-full"
+            [options]="branchSelSvc.branchesOption()"
+            formControlName="branches"
+            optionLabel="name"
+            [maxSelectedLabels]="3"
+          />
+          <label i18n="@@SELECT_BRANCHES" for="branches">
+            Select branches
+          </label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="on" class="w-full">
+          <p-inputnumber
+            inputId="num-max-commit"
+            class="w-full"
+            formControlName="numMaxCommit"
+          />
+          <label i18n="@@NUMBER_MAX_COMMIT" for="num-max-commit">
+            Number max commit
+          </label>
+        </p-floatlabel>
+
+        <div class="flex gap-2">
+          <p-button
+            i18n="@@BTN_BACK"
+            title="back-btn"
+            type="button"
+            severity="secondary"
+            (click)="back()"
+          >
+            Back
+          </p-button>
+
+          <p-button
+            i18n="@@BTN_SELECT_BRANCH"
+            title="select-branches-btn"
+            type="button"
+            [disabled]="branchesForm.invalid"
+            (click)="onSelectBranches()"
+          >
+            Select Branches
+          </p-button>
+        </div>
+      </form>
+    </div>
+  </p-card>
+</section>

@@ -1,0 +1,76 @@
+<section class="flex justify-content-center">
+  <p-card class="w-full max-w-500px">
+    <div class="flex flex-column gap-4">
+      <ng-content></ng-content>
+
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        class="flex flex-column gap-3 align-items-center"
+      >
+        <p-floatlabel variant="on" class="w-full">
+          <input
+            pInputText
+            id="url"
+            class="w-full"
+            formControlName="url"
+            autocomplete="off"
+          />
+          <label i18n="@@URL" for="url">URL</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="on" class="w-full">
+          <input
+            pInputText
+            id="projectId"
+            class="w-full"
+            formControlName="projectId"
+            autocomplete="off"
+          />
+          <label i18n="@@PROJECT_ID" for="projectId">Project ID</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="on" class="w-full">
+          <input
+            pInputText
+            id="accessToken"
+            class="w-full"
+            formControlName="accessToken"
+            autocomplete="off"
+          />
+          <label i18n="@@ACCESS_TOKEN" for="accessToken">Access Token</label>
+        </p-floatlabel>
+
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center">
+            <p-radiobutton
+              name="type"
+              [value]="GIT_TYPE.GIT_LAB"
+              formControlName="type"
+              inputId="gitLab"
+            />
+            <label for="gitLab" class="ml-2">GitLab</label>
+          </div>
+
+          <div class="flex items-center">
+            <p-radiobutton
+              name="type"
+              [value]="GIT_TYPE.GIT_HUB"
+              formControlName="type"
+              inputId="gitHub"
+            />
+            <label for="gitHub" class="ml-2">GitHub</label>
+          </div>
+        </div>
+
+        <p-button
+          title="search-btn"
+          type="button"
+          label="Search"
+          [disabled]="form.invalid"
+          (click)="onSubmit()"
+        ></p-button>
+      </form>
+    </div>
+  </p-card>
+</section>

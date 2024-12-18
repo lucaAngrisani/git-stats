@@ -9,24 +9,36 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "it": "src/locale/messages.it.json"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "mapper-factory"
+            ],
             "outputPath": "dist/git-stats",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/locale"
             ],
             "styles": [
+              "node_modules/primeflex/primeflex.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -38,6 +50,10 @@
           },
           "configurations": {
             "production": {
+              "localize": [
+                "en",
+                "it"
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -80,14 +96,16 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/locale"
             ],
             "styles": [
               "src/styles.css"

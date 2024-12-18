@@ -1,0 +1,10 @@
+<section class="flex flex-column gap-5">
+  <app-branch-selection></app-branch-selection>
+
+  <div class="grid">
+    @if(chartSvc.loadedData()) { @for(chart of chartSvc.chartsRefs; track
+    chart.id) {
+    <app-chart class="col-12 lg:col-6" [chartId]="chart.id"></app-chart>
+    } }
+  </div>
+</section>

@@ -1,0 +1,25 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "URL": "URL",
+    "PROJECT_ID": "Project ID",
+    "ACCESS_TOKEN": "Access Token",
+    "SELECT_BRANCHES": " Select branches ",
+    "NUMBER_MAX_COMMIT": " Number max commit ",
+    "BTN_BACK": " Back ",
+    "BTN_SELECT_BRANCH": " Select Branches ",
+    "CHART1_TITLE": "Mean rows updated per week per contributor",
+    "CHART1_X": "Weeks",
+    "CHART1_Y": "Mean rows updated",
+    "CHART2_TITLE": "Mean time between commits per contributor (in days)",
+    "CHART3_TITLE": "Tot commits per week per contributor",
+    "CHART3_X": "Weeks",
+    "CHART3_Y": "Tot commits",
+    "CHART4_LABEL": "Tot commits",
+    "CHART4_TITLE": "Tot commits per contributor",
+    "CHART5_TITLE": "Num active days per week per contributor",
+    "CHART5_X": "Weeks",
+    "CHART5_Y": "Active days",
+    "TITLE": "Add information to calculate the metrics"
+  }
+}
