@@ -1,5 +1,5 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { loadTranslations } from '@angular/localize';
 import { RouterOutlet } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
 import { LoadingService } from './services/loading.service';
@@ -14,22 +14,12 @@ import { LoadingService } from './services/loading.service';
 export class AppComponent {
   public loadingSvc = inject(LoadingService);
 
-  currentLang = 'en';
+  constructor(private location: Location) { }
 
-  constructor() {
-
+  switchLanguage(lang: string): void {
+    const currentUrl = this.location.path();
+    const newUrl = `/${lang}${currentUrl.replace(/^\/(en|it)/, '')}`;
+    window.location.href = newUrl; // Ricarica con il prefisso della lingua
   }
 
-  switchLanguage(lang: string) {
-    this.currentLang = lang;
-    const url = new URL(window.location.href);
-    url.searchParams.set('lang', lang);
-    this.loadTranslations(lang);
-    window.location.href = url.toString();
-  }
-
-  private async loadTranslations(lang: string) {
-    const translations = await import(`../locale/messages.${lang}.json`);
-    loadTranslations(translations.translations);
-  }
 }

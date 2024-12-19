@@ -16,6 +16,19 @@
         }
       },
       "architect": {
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/git-stats/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputPath": "dist/git-stats/server"
+            }
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
@@ -50,10 +63,7 @@
           },
           "configurations": {
             "production": {
-              "localize": [
-                "en",
-                "it"
-              ],
+              "localize": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -108,6 +118,7 @@
               "src/locale"
             ],
             "styles": [
+              "node_modules/primeflex/primeflex.css",
               "src/styles.css"
             ],
             "scripts": []

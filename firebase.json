@@ -8,8 +8,16 @@
         ],
         "rewrites": [
             {
+                "source": "/en/**",
+                "destination": "/en/index.csr.html"
+            },
+            {
+                "source": "/it/**",
+                "destination": "/it/index.csr.html"
+            },
+            {
                 "source": "**",
-                "destination": "/index.html"
+                "destination": "/en/index.csr.html"
             }
         ]
     }
